@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: laravel_app
+    restart: always
+    working_dir: /var/www
+    # Mapea el código y fija volúmenes persistentes para vendor y storage
+    volumes:
+      - .:/var/www
+      - vendor_data:/var/www/vendor
+      - storage_data:/var/www/storage
+    # Expón 9000 al host para que Nginx (host) haga fastcgi_pass
+    ports:
+      - "9000:9000"
+    environment:
+      APP_ENV: production
+      APP_DEBUG: "false"
+
+volumes:
+  vendor_data:
+  storage_data:
