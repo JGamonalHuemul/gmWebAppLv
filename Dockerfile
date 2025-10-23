@@ -3,7 +3,7 @@ FROM php:8.3-fpm
 
 # Paquetes y extensiones necesarias (pgsql)
 RUN apt-get update && apt-get install -y \
-    git zip unzip curl libpng-dev libonig-dev libxml2-dev libzip-dev libpq-dev \
+    git zip unzip curl libpng-dev libonig-dev libxml2-dev libzip-dev libpq-dev libicu-dev pkg-config \
  && docker-php-ext-install mbstring exif pcntl bcmath gd zip intl \
  && docker-php-ext-install pdo_pgsql
 
