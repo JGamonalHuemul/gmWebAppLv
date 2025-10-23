@@ -22,4 +22,9 @@ class GmCliente extends Model
     public function sesiones() { return $this->hasMany(GmSesionAnalytics::class, 'clienteId', 'clienteId'); }
     public function sucursales() { return $this->hasMany(GmSucursal::class, 'clienteId', 'clienteId'); }
     public function analisisCabs() { return $this->hasMany(GmAnalisisCab::class, 'clienteId', 'clienteId'); }
+
+    public function sectores()
+    {
+        return $this->hasManyThrough(GmSector::class, GmSucursal::class, 'clienteId', 'sucursalId', 'clienteId', 'sucursalId');
+    }
 }

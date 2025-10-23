@@ -1,4 +1,4 @@
-<div>
+<div >
     @if($showClientForm)
     <p class="text-xl font-bold mb-10">Cliente seleccionado: {{ $selectedClient['clienteNombre'] ?? '' }}</p>  
     <section class="flex flex-col justify-center"> 
