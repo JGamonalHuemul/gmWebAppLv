@@ -15,7 +15,7 @@ services:
       - storage_data:/var/www/storage
     # Expón 9000 al host para que Nginx (host) haga fastcgi_pass
     ports:
-      - "9000:9000"
+      - "3000:3000"
     environment:
       APP_ENV: production
       APP_DEBUG: "false"
