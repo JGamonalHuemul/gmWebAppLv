@@ -17,7 +17,11 @@
         </section>
         {{-- Tabla de tópicos  --}}
         <section class="my-6 grid auto-rows-min gap-4 md:grid-cols-2">
-            @livewire(\App\Livewire\DashboardGraph::class, ['clientId' => $selectedClient['clienteId'] ?? '', 'selectedTime' => $data['selectedTime'] ?? 'mensual', 'startDate' => $data['startDate'] ?? null, 'endDate' => $data['endDate'] ?? null])
+            @livewire(\App\Livewire\DashboardGraph::class, ['clientId' => $selectedClient['clienteId'] ?? '', 
+                                                            'selectedTime' => $data['selectedTime'] ?? 'mensual', 
+                                                            'startDate' => $data['startDate'] ?? null, 
+                                                            'endDate' => $data['endDate'] ?? null, 
+                                                            'selectedBranch' => $data['selectedBranch'] ?? null,])   
             @livewire(\App\Livewire\EmotionsWidget::class, ['clientId' => $selectedClient['clienteId'] ?? ''])
 
         </section>
